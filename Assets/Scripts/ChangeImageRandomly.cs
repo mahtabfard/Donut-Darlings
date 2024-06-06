@@ -6,6 +6,7 @@ public class ChangeImageRandomly : MonoBehaviour
 {
     public Sprite[] sprites;
    public  GameObject existingPrefab ;
+public  static string chosenSprites;
 
     void Start()
     {
@@ -14,6 +15,7 @@ public class ChangeImageRandomly : MonoBehaviour
      void InstantiatePrefab()
     {
           int randomIndex = Random.Range(0, sprites.Length);
-        existingPrefab.GetComponent<SpriteRenderer>().sprite = sprites[randomIndex];
+           existingPrefab.GetComponent<SpriteRenderer>().sprite = sprites[randomIndex];
+           chosenSprites = sprites[randomIndex].name;
     }
 }
